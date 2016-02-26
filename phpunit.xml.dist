@@ -1,0 +1,17 @@
+<phpunit bootstrap="./vendor/autoload.php"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         disallowChangesToGlobalState="true"
+         colors="never"
+         verbose="true">
+    <testsuites>
+        <testsuite name="abacaphiliac/zend-phpdotenv">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

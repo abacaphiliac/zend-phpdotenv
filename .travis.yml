@@ -17,3 +17,6 @@ before_install:
 
 install:
   - composer install --no-interaction
+
+script:
+  - ./vendor/bin/phing
