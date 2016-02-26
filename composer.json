@@ -1,0 +1,43 @@
+{
+    "name": "abacaphiliac/zend-phpdotenv",
+    "description": "ZF2 Module that loads vlucas/phpdotenv",
+    "keywords": [
+        "env",
+        "dotenv",
+        "environment",
+        "zend",
+        "zf2",
+        "module"
+    ],
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timothy Younger",
+            "email": "abacaphiliac@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.2",
+        "zendframework/zend-modulemanager": "^2.3",
+        "zendframework/zend-eventmanager": "^2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5|^4",
+        "phing/phing": "^2",
+        "zendframework/zend-mvc": "^2",
+        "zendframework/zend-loader": "^2",
+        "jakub-onderka/php-parallel-lint": "^0.9",
+        "squizlabs/php_codesniffer": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abacaphiliac\\ZendPhpDotEnv\\": "src/ZendPhpDotEnv"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
