@@ -1,0 +1,41 @@
+<project name="abacaphiliac/zend-phpdotenv" default="develop" basedir=".">
+    
+    <target name="develop">
+        <phingcall target="lint"/>
+        <phingcall target="tests"/>
+    </target>
+
+    <target name="lint">
+        <phingcall target="php-lint"/>
+        <phingcall target="phpcs"/>
+    </target>
+
+    <target name="php-lint">
+        <exec command="vendor/bin/parallel-lint src tests"
+              passthru="true"
+              output="/dev/stdout"
+              error="/dev/stdout"
+              checkreturn="true"/>
+    </target>
+
+    <target name="phpcs">
+        <exec command="vendor/bin/phpcs --standard=PSR2 --extensions=php --severity=1 --colors -p src/ tests/"
+              passthru="true"
+              output="/dev/stdout"
+              error="/dev/stdout"
+              checkreturn="true"/>
+    </target>
+    
+    <target name="tests">
+        <phingcall target="unit-tests"/>
+    </target>
+    
+    <target name="unit-tests">
+        <exec command="./vendor/bin/phpunit --coverage-text"
+            passthru="true"
+            output="/dev/stdout"
+            error="/dev/stdout"
+            checkreturn="true"/>
+    </target>
+    
+</project>
