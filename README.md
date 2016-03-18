@@ -4,7 +4,9 @@ ZF2 Module that loads [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv).
 Module attaches a listener to EVENT_MERGE_CONFIG on ModuleManager's EventManager, before the ConfigListener merges the config.
 
 # installation
-TODO composer.json
+```bash
+composer require abacaphiliac/zend-phpdotenv
+```
 
 # usage
 1. Add `Abacaphiliac\ZendPhpDotEnv` to your ZF2 application module config.
