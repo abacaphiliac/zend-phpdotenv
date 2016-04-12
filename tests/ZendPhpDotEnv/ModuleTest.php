@@ -58,6 +58,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
         ));
         $serviceLocator->setFactory('EventManager', new EventManagerFactory());
         $serviceLocator->setService('SharedEventManager', new SharedEventManager());
+        $serviceLocator->setFactory('ServiceListener', '\Zend\Mvc\Service\ServiceListenerFactory');
         
         $moduleManagerFactory = new ModuleManagerFactory();
         $moduleManager = $moduleManagerFactory->createService($serviceLocator);

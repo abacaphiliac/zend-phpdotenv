@@ -31,7 +31,7 @@
     </target>
     
     <target name="unit-tests">
-        <exec command="./vendor/bin/phpunit --coverage-text"
+        <exec command="./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover"
             passthru="true"
             output="/dev/stdout"
             error="/dev/stdout"

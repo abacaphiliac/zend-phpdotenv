@@ -2,4 +2,5 @@ build/
 vendor/
 .env
 composer.lock
+coverage.clover
 phpunit.xml
