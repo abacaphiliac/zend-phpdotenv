@@ -5,7 +5,7 @@
 # zend-phpdotenv
 ZF2 Module that loads [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv).
 
-Module attaches a listener to EVENT_MERGE_CONFIG on ModuleManager's EventManager, before the ConfigListener merges the config.
+Module attaches a listener to `EVENT_LOAD_MODULE` on ModuleManager's EventManager to load environment variables while the module is loaded.
 
 # Installation
 ```bash
@@ -14,8 +14,8 @@ composer require abacaphiliac/zend-phpdotenv
 
 # Usage
 1. Add `Abacaphiliac\ZendPhpDotEnv` to your ZF2 application module config.
-1. Create a `.env` file in the root directory of your ZF2 application.
-1. Purge your ZF2 application's config cache (the environment variables will be added when the config is merged).
+2. Create a `.env` file in the root directory of your ZF2 application.
+3. Use `getenv()` anywhere in your code (or config) to pull environment variables.
 
 # Dependencies
 php >=5.3.9 and ZF >=2.3
