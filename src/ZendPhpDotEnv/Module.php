@@ -44,7 +44,7 @@ class Module
     {
         $events = $moduleManager->getEventManager();
 
-        $events->attach(ModuleEvent::EVENT_MERGE_CONFIG, array($this, 'loadEnvironmentVariables'), 2000);
+        $events->attach(ModuleEvent::EVENT_LOAD_MODULE, array($this, 'loadEnvironmentVariables'), 2000);
     }
 
     /**
