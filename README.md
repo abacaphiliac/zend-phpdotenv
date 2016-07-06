@@ -18,11 +18,9 @@ composer require abacaphiliac/zend-phpdotenv
 3. Use `getenv()` anywhere in your code (or config) to pull environment variables.
 
 # Dependencies
-php >=5.3.9 and ZF >=2.3
+php >=5.3.9 and ZF >=2
 
 See [composer.json](composer.json).
-
-TODO Compatibility with ZF <2.3
 
 ## Contributing
 ```
