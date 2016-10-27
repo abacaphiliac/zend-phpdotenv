@@ -41,7 +41,7 @@ class DotEnvLoader
         try {
             return DotEnvFactory::createFromConstant($constant, $file)->load();
         } catch (InvalidPathException $e) {
-            throw new InvalidConstantPathException($e->getMessage(), $e->getCode(), $e);
+            //
         }
     }
 
@@ -56,7 +56,7 @@ class DotEnvLoader
         try {
             return DotEnvFactory::createFromEnvironmentVariable($variable, $file)->load();
         } catch (InvalidPathException $e) {
-            throw new InvalidEnvironmentVariablePathException($e->getMessage(), $e->getCode(), $e);
+            //
         }
     }
 
@@ -70,7 +70,7 @@ class DotEnvLoader
         try {
             return DotEnvFactory::createFromWorkingDirectory($file)->load();
         } catch (InvalidPathException $e) {
-            throw new InvalidWorkingDirectoryPathException($e->getMessage(), $e->getCode(), $e);
+            //
         }
     }
 }
