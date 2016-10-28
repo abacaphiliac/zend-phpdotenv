@@ -2,10 +2,11 @@
 
 namespace Abacaphiliac\ZendPhpDotEnv;
 
+use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleEvent;
-use Zend\ModuleManager\ModuleManager;
+use Zend\ModuleManager\ModuleManagerInterface;
 
-class Module
+class Module implements InitProviderInterface
 {
     /** @var  string */
     private $constant = 'APPLICATION_PATH';
@@ -38,9 +39,9 @@ class Module
     }
 
     /**
-     * @param ModuleManager $moduleManager
+     * @param ModuleManagerInterface $moduleManager
      */
-    public function init(ModuleManager $moduleManager)
+    public function init(ModuleManagerInterface $moduleManager)
     {
         $events = $moduleManager->getEventManager();
 

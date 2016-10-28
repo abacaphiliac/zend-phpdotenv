@@ -4,6 +4,9 @@ namespace AbacaphiliacTest\ZendPhpDotEnv;
 
 use Abacaphiliac\ZendPhpDotEnv\DotEnvFactory;
 
+/**
+ * @covers \Abacaphiliac\ZendPhpDotEnv\DotEnvFactory
+ */
 class DotEnvFactoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreate()
