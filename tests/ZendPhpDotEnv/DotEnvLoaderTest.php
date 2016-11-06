@@ -4,6 +4,9 @@ namespace AbacaphiliacTest\ZendPhpDotEnv;
 
 use Abacaphiliac\ZendPhpDotEnv\DotEnvLoader;
 
+/**
+ * @covers \Abacaphiliac\ZendPhpDotEnv\DotEnvLoader
+ */
 class DotEnvLoaderTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetEnvironmentVariable()

@@ -10,6 +10,9 @@ use Zend\Mvc\Service\EventManagerFactory;
 use Zend\Mvc\Service\ModuleManagerFactory;
 use Zend\ServiceManager\ServiceManager;
 
+/**
+ * @covers \Abacaphiliac\ZendPhpDotEnv\Module
+ */
 class ModuleTest extends \PHPUnit_Framework_TestCase
 {
     /**
