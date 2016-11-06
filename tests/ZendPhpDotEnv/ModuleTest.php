@@ -15,6 +15,13 @@ use Zend\ServiceManager\ServiceManager;
  */
 class ModuleTest extends \PHPUnit_Framework_TestCase
 {
+    public function testGetConfig()
+    {
+        $module = new Module();
+        $config = $module->getConfig();
+        self::assertArraySubset($config, unserialize(serialize($config)));
+    }
+
     /**
      * @expectedException \Abacaphiliac\ZendPhpDotEnv\Exception\InvalidConstantPathException
      */

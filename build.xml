@@ -19,7 +19,7 @@
     </target>
 
     <target name="phpcs">
-        <exec command="vendor/bin/phpcs --standard=PSR2 --extensions=php --severity=1 --colors -p src/ tests/"
+        <exec command="vendor/bin/phpcs --standard=PSR2 --extensions=php --severity=1 --colors -p config/ src/ tests/"
               passthru="true"
               output="/dev/stdout"
               error="/dev/stdout"

@@ -2,11 +2,12 @@
 
 namespace Abacaphiliac\ZendPhpDotEnv;
 
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleEvent;
 use Zend\ModuleManager\ModuleManagerInterface;
 
-class Module implements InitProviderInterface
+class Module implements InitProviderInterface, ConfigProviderInterface
 {
     /** @var  string */
     private $constant = 'APPLICATION_PATH';
@@ -36,6 +37,16 @@ class Module implements InitProviderInterface
         if ($file) {
             $this->file = $file;
         }
+    }
+
+    /**
+     * Returns configuration to merge with application configuration
+     *
+     * @return array|\Traversable
+     */
+    public function getConfig()
+    {
+        return require __DIR__ . '/../../config/module.config.php';
     }
 
     /**
