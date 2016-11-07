@@ -50,4 +50,13 @@ class DotEnvFactory
     {
         return new Dotenv($path, $file);
     }
+
+    /**
+     * @param string $file
+     * @return Dotenv
+     */
+    public function createFromFile($file)
+    {
+        return new Dotenv(pathinfo($file, PATHINFO_DIRNAME), pathinfo($file, PATHINFO_BASENAME));
+    }
 }

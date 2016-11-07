@@ -3,6 +3,7 @@
 namespace AbacaphiliacTest\ZendPhpDotEnv;
 
 use Abacaphiliac\ZendPhpDotEnv\DotEnvFactory;
+use org\bovigo\vfs\vfsStream;
 
 /**
  * @covers \Abacaphiliac\ZendPhpDotEnv\DotEnvFactory
@@ -48,6 +49,19 @@ class DotEnvFactoryTest extends \PHPUnit_Framework_TestCase
         
         unset($_ENV[__METHOD__]);
         
+        self::assertInstanceOf('\Dotenv\Dotenv', $actual);
+    }
+
+    public function testCreateFromFile()
+    {
+        $sut = new DotEnvFactory();
+
+        $root = vfsStream::setup('test');
+        $file = vfsStream::newFile('.env');
+        $root->addChild($file);
+
+        $actual = $sut->createFromFile($file->url());
+
         self::assertInstanceOf('\Dotenv\Dotenv', $actual);
     }
 }
